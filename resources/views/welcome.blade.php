@@ -308,7 +308,12 @@ Landing Page - Regular Loading
       <a href="{{ route('detail.berita', $b->id) }}" class="news-card reveal">
         <div class="news-img">
           @if(!empty($b->img))
-            <img src="{{ url($b->img) }}" alt="{{ $b->title }}">
+          @env('local')
+            <img src="{{ url('')}}/berita/{{($b->img) }}" alt="{{ $b->title }}">
+          @endenv
+          @production
+          <img src="{{ url('')}}/public/berita/{{($b->img) }}" alt="{{ $b->title }}">
+          @endproduction
           @else
             <div class="news-img-placeholder">
               <iconify-icon icon="ph:newspaper-bold" style="color:var(--cyan);font-size:3rem;opacity:.5;"></iconify-icon>
@@ -344,7 +349,12 @@ Landing Page - Regular Loading
           @foreach($infografis as $info)
           <div class="info-slide">
             <div class="info-card" data-bs-toggle="modal" data-bs-target="#infografisModal{{ $info->id }}">
-              <img src="{{ url($info->img) }}" alt="{{ $info->name }}" class="info-img">
+              @env('local')
+              <img src="{{ url('')}}/infografis/{{($info->img) }}" alt="{{ $info->name }}" class="info-img">
+              @endenv
+              @production
+              <img src="{{ url('')}}/infografis/{{($info->img) }}" alt="{{ $info->name }}" class="info-img">
+              @endproduction
               <div class="info-foot">
                 <iconify-icon icon="ph:download-simple-bold"></iconify-icon>
                 <p class="info-foot-text">
@@ -375,7 +385,12 @@ Landing Page - Regular Loading
         <a href="{{ url($info->img) }}" download class="modal-dl-btn">
           <iconify-icon icon="ph:download-bold"></iconify-icon> Download
         </a>
-        <img src="{{ url($info->img) }}" class="img-fluid" alt="{{ $info->name }}">
+        @env('local')
+        <img src="{{ url('')}}/infografis/{{($info->img) }}" class="img-fluid" alt="{{ $info->name }}">
+        @endenv
+        @production
+        <img src="{{ url('')}}/public/infografis/{{($info->img) }}" class="img-fluid" alt="{{ $info->name }}">
+        @endproduction
       </div>
     </div>
   </div>
@@ -404,7 +419,12 @@ Landing Page - Regular Loading
             <div class="event-card" data-bs-toggle="modal" data-bs-target="#modalKegiatan{{ $k->id }}">
               <div class="event-img">
                 @if(!empty($k->img))
-                  <img src="{{ url($k->img) }}" alt="{{ $k->name }}">
+                @env('local')
+                  <img src="{{ url('')}}/kegiatan/{{($k->img) }}" alt="{{ $k->name }}">
+                @endenv
+                @production
+                <img src="{{ url('')}}/public/kegiatan/{{($k->img) }}" alt="{{ $k->name }}">
+                @endproduction
                 @else
                   <div class="event-img-placeholder">
                     <iconify-icon icon="ph:presentation-chart-bold" style="color:var(--cyan);font-size:3rem;opacity:.5;"></iconify-icon>
@@ -455,7 +475,12 @@ Landing Page - Regular Loading
       </div>
       <div class="modal-body text-center p-4">
         @if($k->img)
-        <img src="{{ url($k->img) }}" class="img-fluid mb-3" alt="{{ $k->name }}">
+        @env('local')
+        <img src="{{ url('')}}/kegiatan/{{($k->img) }}" class="img-fluid mb-3" alt="{{ $k->name }}">
+        @endenv
+        @production
+        <img src="{{ url('')}}/public/kegiatan/{{($k->img) }}" class="img-fluid mb-3" alt="{{ $k->name }}">
+        @endproduction
         @endif
         @if($k->resume)
         <h6 class="text-start modal-resume-title"><strong>Resume Kegiatan:</strong></h6>
