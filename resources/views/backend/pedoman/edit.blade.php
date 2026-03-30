@@ -50,7 +50,12 @@ Edit pedoman
             <div id="img" class="form-text">Max. 2MB File jpeg,png,jpg</div>
             <div class="mt-2">
               <strong>Gambar Saat Ini:</strong><br>
+              @env('local')
               <img src="{{ url('pedoman/' . $data->img) }}" alt="pedoman" width="200">
+              @endenv
+              @production
+              <img src="{{ url('public/pedoman/' . $data->img) }}" alt="pedoman" width="200">
+              @endproduction
             </div>
           </div>
           <div class="mb-3">

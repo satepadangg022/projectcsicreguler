@@ -34,7 +34,12 @@ Edit Berita
           <div class="mb-3">
             <label for="img" class="form-label">Image</label><br>
             @if ($data->img)
+            @env('local')
               <img src="{{ url('berita/' . $data->img) }}" alt="image" style="max-width: 150px; margin-bottom: 10px;">
+            @endenv
+            @production
+            <img src="{{ url('public/berita/' . $data->img) }}" alt="image" style="max-width: 150px; margin-bottom: 10px;">
+            @endproduction
             @endif
             <input type="file" id="img" name="img" class="form-control">
             <div class="form-text">Max. 2MB File jpeg,png,jpg</div>

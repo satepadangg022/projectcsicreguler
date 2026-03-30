@@ -51,9 +51,16 @@ Pedoman
                     <td>
                       <div class="d-flex px-2 py-1">
                         <div>
+                          @env('local')
                           <img src="@if (empty($d->img)) {{ url('') }}/images/default-image.png
                                                     @else
                                                     {{ url('') }}/pedoman/{{ $d->img }} @endif" style="height: 90px; width:auto;">
+                          @endenv
+                          @production
+                          <img src="@if (empty($d->img)) {{ url('') }}/images/default-image.png
+                                                    @else
+                                                    {{ url('') }}/public/pedoman/{{ $d->img }} @endif" style="height: 90px; width:auto;">
+                          @endproduction
                         </div>
                       </div>
                     </td>

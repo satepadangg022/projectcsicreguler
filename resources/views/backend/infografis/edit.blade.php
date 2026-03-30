@@ -42,7 +42,12 @@ Edit Infografis
             <div id="img" class="form-text">Max. 2MB File jpeg,png,jpg</div>
             <div class="mt-2">
               <strong>Gambar Saat Ini:</strong><br>
+              @env('local')
               <img src="{{ url('infografis/' . $data->img) }}" alt="Infografis" width="200">
+              @endenv
+              @production
+              <img src="{{ url('public/infografis/' . $data->img) }}" alt="Infografis" width="200">
+              @endproduction
             </div>
           </div>
           <button type="submit" class="btn btn-warning">Update</button>
