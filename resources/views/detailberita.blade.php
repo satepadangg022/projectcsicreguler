@@ -49,18 +49,26 @@ Home
     <div style="max-width: 900px; margin: auto; background-color: white; padding: 20px;">
     
         <div style="text-align: center; margin-bottom: 20px;">
+            @env('local')
             <img src="@if (empty($data->img)) {{ url('') }}/images/default-image.png
                                     @else
                                     {{ url('') }}/berita/{{ $data->img }} @endif" alt="Ilustrasi Ransomware" style="max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+            @endenv
+
+            @production
+            <img src="@if (empty($data->img)) {{ url('') }}/images/default-image.png
+                                    @else
+                                    {{ url('') }}/public/berita/{{ $data->img }} @endif" alt="Ilustrasi Ransomware" style="max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">
+            @endproduction
         </div>
     
-        <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 10px; text-align: center;">{{$data->title}}</h1>
+        <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 10px; text-align: center; color: #000;">{{$data->title}}</h1>
     
         <p style="font-size: 14px; color: #666; margin-bottom: 20px; text-align: center;">
             {{$data->sub_title}}
         </p>
         <hr>
-        <div style="text-align: justify; font-size: 16px; line-height: 1.6;">
+        <div style="text-align: justify; font-size: 16px; line-height: 1.6; color: #000;">
             <p>
                 {!! $data->desc !!}
             </p>

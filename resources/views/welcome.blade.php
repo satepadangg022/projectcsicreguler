@@ -353,7 +353,7 @@ Landing Page - Regular Loading
               <img src="{{ url('')}}/infografis/{{($info->img) }}" alt="{{ $info->name }}" class="info-img">
               @endenv
               @production
-              <img src="{{ url('')}}/infografis/{{($info->img) }}" alt="{{ $info->name }}" class="info-img">
+              <img src="{{ url('')}}/public/infografis/{{($info->img) }}" alt="{{ $info->name }}" class="info-img">
               @endproduction
               <div class="info-foot">
                 <iconify-icon icon="ph:download-simple-bold"></iconify-icon>
