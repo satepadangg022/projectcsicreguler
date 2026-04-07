@@ -37,7 +37,7 @@ class KegiatanController extends Controller
             $data->resume = $request->resume;
             if ($request->hasFile('img')) {
                 $this->validate($request, [
-                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:5120',
                     'resume' => 'nullable|string',
                 ]);
             
@@ -85,7 +85,7 @@ class KegiatanController extends Controller
     
         if ($request->hasFile('img')) {
             $this->validate($request, [
-                'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+                'img' => 'required|file|image|mimes:jpeg,png,jpg|max:5120',
                 'resume' => 'nullable|string',
             ]);
     

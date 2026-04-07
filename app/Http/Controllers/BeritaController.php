@@ -47,7 +47,7 @@ class BeritaController extends Controller
             $data->source8 = $request->source8;
             if ($request->hasFile('img')) {
                 $this->validate($request, [
-                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:5120',
                 ]);
             
                 $file = $request->file('img');
@@ -102,7 +102,7 @@ class BeritaController extends Controller
         $data->source8 = $request->source8;
         if ($request->hasFile('img')) {
             $this->validate($request, [
-                'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+                'img' => 'required|file|image|mimes:jpeg,png,jpg|max:5120',
             ]);
     
             // Hapus gambar lama jika ada

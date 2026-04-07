@@ -52,7 +52,7 @@ class PedomanController extends Controller
             $data->type = $request->type;
             if ($request->hasFile('img')) {
                 $this->validate($request, [
-                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:5120',
                 ]);
             
                 $file = $request->file('img');
@@ -127,7 +127,7 @@ class PedomanController extends Controller
     
         if ($request->hasFile('img')) {
             $this->validate($request, [
-                'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+                'img' => 'required|file|image|mimes:jpeg,png,jpg|max:5120',
             ]);
     
             // Hapus gambar lama

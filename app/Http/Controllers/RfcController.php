@@ -43,7 +43,7 @@ class RfcController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'img' => 'nullable|file|image|mimes:jpeg,png,jpg|max:2048',
+            'img' => 'nullable|file|image|mimes:jpeg,png,jpg|max:5120',
             'pdf' => 'nullable|file|mimes:pdf|max:5120', // maksimal 5MB
         ]);
     
@@ -116,7 +116,7 @@ class RfcController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'img' => 'nullable|file|image|mimes:jpeg,png,jpg|max:2048',
+            'img' => 'nullable|file|image|mimes:jpeg,png,jpg|max:5120',
             'pdf' => 'nullable|file|mimes:pdf|max:5120',
         ]);
     
