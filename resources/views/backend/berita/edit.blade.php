@@ -42,7 +42,7 @@ Edit Berita
             @endproduction
             @endif
             <input type="file" id="img" name="img" class="form-control">
-            <div class="form-text">Max. 5MB File jpeg,png,jpg</div>
+            <div class="form-text">Max. 8MB File jpeg,png,jpg</div>
           </div>
 
           <div class="mb-3">

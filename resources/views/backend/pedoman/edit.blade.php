@@ -47,7 +47,7 @@ Edit pedoman
           <div class="mb-3">
             <label for="img" class="form-label">Image</label><br>
             <input type="file" id="img" name="img" aria-describedby="img">
-            <div id="img" class="form-text">Max. 5MB File jpeg,png,jpg</div>
+            <div id="img" class="form-text">Max. 8MB File jpeg,png,jpg</div>
             <div class="mt-2">
               <strong>Gambar Saat Ini:</strong><br>
               @env('local')
